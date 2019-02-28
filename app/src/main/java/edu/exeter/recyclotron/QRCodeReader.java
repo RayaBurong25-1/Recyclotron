@@ -22,15 +22,42 @@ public class QRCodeReader extends AppCompatActivity implements BarcodeReader.Bar
         barcodeReader = (BarcodeReader) getSupportFragmentManager().findFragmentById(R.id.barcode_scanner);
     }
 
+    boolean decrypt(Barcode barcode)
+    {
+        String val = barcode.displayValue;
+        if (!val.substring(0, 14).equals("<recyclotron>"))
+            return false;
+        int[] add = new int[6];
+        for (int i = 0; i < 6; i++)
+        {
+            if (!val.substring(14 + i*10, 14 + i*10 + 3).equals("<"+i+">"))
+                return false;
+            if (!val.substring(14 + i*10 + 6, 14 + i*10 + 10).equals("</"+i+">"))
+                return false;
+            try {
+                add[i] = Integer.valueOf(val.substring(14 + i * 10 + 3, 14 + i * 10 + 6));
+            }
+            catch (NumberFormatException e) {
+                return false;
+            }
+        }
+        if (!val.substring(74, 89).equals("</recyclotron>"))
+            return false;
+        //TODO: add this to local database
+        return true;
+    }
+
     @Override
     public void onScanned(Barcode barcode) {
         // single barcode scanned
-        barcodeReader.playBeep();
+        if (decrypt(barcode)) {
+            barcodeReader.playBeep();
 
-        //TODO: put scanned into log
+            //TODO: put scanned into log
 
-        Intent intent = new Intent(QRCodeReader.this, Dashboard.class);
-        startActivity(intent);
+            Intent intent = new Intent(QRCodeReader.this, Dashboard.class);
+            startActivity(intent);
+        }
     }
 
     @Override

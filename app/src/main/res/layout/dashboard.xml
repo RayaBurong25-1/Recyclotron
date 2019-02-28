@@ -47,18 +47,13 @@
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonTransfer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/points">
+        app:layout_constraintBottom_toTopOf="@+id/imageButton"
+        app:layout_constraintTop_toBottomOf="@+id/points"
+        tools:layout_editor_absoluteX="8dp">
 
         <TableRow
             android:layout_width="match_parent"
@@ -218,4 +213,65 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="45sp"
+        android:layout_height="50sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTransfer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/facebook" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="45sp"
+        android:layout_height="50sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTransfer"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:srcCompat="@drawable/instagram" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="45sp"
+        android:layout_height="50sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTransfer"
+        app:layout_constraintStart_toEndOf="@+id/imageButton2"
+        app:srcCompat="@drawable/snapchat" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="45sp"
+        android:layout_height="50sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTransfer"
+        app:layout_constraintStart_toEndOf="@+id/imageButton3"
+        app:srcCompat="@drawable/twitter" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="45sp"
+        android:layout_height="50sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/buttonTransfer"
+        app:layout_constraintStart_toEndOf="@+id/imageButton4"
+        app:srcCompat="@drawable/linkedin" />
+
 </android.support.constraint.ConstraintLayout>

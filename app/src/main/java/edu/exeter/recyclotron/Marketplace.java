@@ -38,8 +38,9 @@ public class Marketplace extends AppCompatActivity {
         for (int i = 0; i < 10; i++)
         {
             HashMap<String, String> M = new HashMap<String, String>();
-            M.put("icon", "name.jpg");
-            M.put("name", "Generic Store Name" + i);
+            M.put("icon", ""+R.drawable.iclauncher);
+            M.put("name", "Generic Store Name " + i);
+            Stores.add(M);
         }
         showList();
     }

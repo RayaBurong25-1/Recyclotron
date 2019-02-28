@@ -47,9 +47,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        //TODO: left side = scan QR code
-        //TODO: center side = dashboard (username, points, social media buttons)
-        //TODO: right side = partnership market
     }
 }
